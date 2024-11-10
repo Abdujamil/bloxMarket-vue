@@ -1,0 +1,550 @@
+<template>
+  <Header />
+  <div class="main">
+    <div class="container">
+      <div class="content">
+        <div class="content__head">
+          <div class="content__head-slider">
+            <swiper
+              :slides-per-view="1"
+              :space-between="30"
+              :loop="true"
+              :autoplay="{ delay: 5000 }"
+              :pagination="{ clickable: true, type: 'fraction' }"
+            >
+              <swiper-slide>
+                <img src="/bag-1.png" alt="" />
+                <h1>
+                  Нашёл промокод <br />
+                  в соцсетях?
+                </h1>
+                <p>Активируй его и забирай свой бонус!</p>
+              </swiper-slide>
+
+              <swiper-slide>
+                <h1>Слайд 2</h1>
+                <p>Описание для второго слайда</p>
+              </swiper-slide>
+              <swiper-slide>
+                <h1>Слайд 3</h1>
+                <p>Описание для второго слайда</p>
+              </swiper-slide>
+              <swiper-slide>
+                <h1>Слайд 4</h1>
+                <p>Описание для второго слайда</p>
+              </swiper-slide>
+            </swiper>
+          </div>
+
+          <div class="content__head-gift">
+            <h2>Ежедневные конкурсы на игровые предметы</h2>
+          </div>
+        </div>
+
+        <div class="content__body">
+          <div class="cards">
+            <div class="card">
+              <div class="card__new"><span> NEW</span></div>
+              <div class="card__body">
+                <div class="card__body-foot">
+                  <div class="world-icon">
+                    <svg
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.58052 2.79697C8.83042 2.51511 8.97447 2.50488 9 2.50488C9.02553 2.50488 9.16958 2.51511 9.41948 2.79697C9.66834 3.07767 9.93815 3.5409 10.185 4.19915C10.5972 5.29837 10.8918 6.79699 10.9757 8.50488H7.02435C7.10822 6.79699 7.4028 5.29837 7.81501 4.19915C8.06185 3.5409 8.33166 3.07767 8.58052 2.79697ZM5.02218 8.50488C5.10742 6.59509 5.43487 4.8502 5.94235 3.49691C5.98785 3.37557 6.03525 3.25616 6.0846 3.13902C3.96378 4.11189 2.41296 6.11342 2.07089 8.50488H5.02218ZM2.07089 10.5049H5.02218C5.10742 12.4147 5.43487 14.1596 5.94235 15.5129C5.98785 15.6342 6.03525 15.7536 6.0846 15.8707C3.96378 14.8979 2.41296 12.8963 2.07089 10.5049ZM7.02435 10.5049H10.9757C10.8918 12.2128 10.5972 13.7114 10.185 14.8106C9.93815 15.4689 9.66834 15.9321 9.41948 16.2128C9.16958 16.4947 9.02553 16.5049 9 16.5049C8.97447 16.5049 8.83042 16.4947 8.58052 16.2128C8.33166 15.9321 8.06185 15.4689 7.81501 14.8106C7.4028 13.7114 7.10822 12.2128 7.02435 10.5049ZM12.9778 10.5049C12.8926 12.4147 12.5651 14.1596 12.0576 15.5129C12.0122 15.6342 11.9647 15.7536 11.9154 15.8707C14.0362 14.8979 15.587 12.8963 15.9291 10.5049H12.9778ZM15.9291 8.50488C15.587 6.11342 14.0362 4.11189 11.9154 3.13902C11.9647 3.25616 12.0122 3.37558 12.0576 3.49691C12.5651 4.8502 12.8926 6.59509 12.9778 8.50488H15.9291ZM18 9.50488C18 14.4754 13.9706 18.5049 9 18.5049C4.02944 18.5049 0 14.4754 0 9.50488C0 4.53432 4.02944 0.504883 9 0.504883C13.9706 0.504883 18 4.53432 18 9.50488Z"
+                        fill="#20C75B"
+                      />
+                    </svg>
+                    <span>148</span>
+                  </div>
+                  <div class="btn">
+                    Coinflip
+                    <span>
+                      <svg
+                        width="17"
+                        height="16"
+                        viewBox="0 0 17 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.2071 8.71199C16.5976 8.32146 16.5976 7.6883 16.2071 7.29777L9.84314 0.933814C9.45262 0.54329 8.81946 0.54329 8.42893 0.933814C8.03841 1.32434 8.03841 1.9575 8.42893 2.34803L14.0858 8.00488L8.42893 13.6617C8.03841 14.0523 8.03841 14.6854 8.42893 15.0759C8.81946 15.4665 9.45262 15.4665 9.84315 15.0759L16.2071 8.71199ZM0.5 9.00488L15.5 9.00488L15.5 7.00488L0.5 7.00488L0.5 9.00488Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-2 card">
+              <div class="card__new"><span> NEW</span></div>
+              <div class="card__body">
+               <div class="card__body-foot">
+                  <div class="world-icon">
+                    <svg
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.58052 2.79697C8.83042 2.51511 8.97447 2.50488 9 2.50488C9.02553 2.50488 9.16958 2.51511 9.41948 2.79697C9.66834 3.07767 9.93815 3.5409 10.185 4.19915C10.5972 5.29837 10.8918 6.79699 10.9757 8.50488H7.02435C7.10822 6.79699 7.4028 5.29837 7.81501 4.19915C8.06185 3.5409 8.33166 3.07767 8.58052 2.79697ZM5.02218 8.50488C5.10742 6.59509 5.43487 4.8502 5.94235 3.49691C5.98785 3.37557 6.03525 3.25616 6.0846 3.13902C3.96378 4.11189 2.41296 6.11342 2.07089 8.50488H5.02218ZM2.07089 10.5049H5.02218C5.10742 12.4147 5.43487 14.1596 5.94235 15.5129C5.98785 15.6342 6.03525 15.7536 6.0846 15.8707C3.96378 14.8979 2.41296 12.8963 2.07089 10.5049ZM7.02435 10.5049H10.9757C10.8918 12.2128 10.5972 13.7114 10.185 14.8106C9.93815 15.4689 9.66834 15.9321 9.41948 16.2128C9.16958 16.4947 9.02553 16.5049 9 16.5049C8.97447 16.5049 8.83042 16.4947 8.58052 16.2128C8.33166 15.9321 8.06185 15.4689 7.81501 14.8106C7.4028 13.7114 7.10822 12.2128 7.02435 10.5049ZM12.9778 10.5049C12.8926 12.4147 12.5651 14.1596 12.0576 15.5129C12.0122 15.6342 11.9647 15.7536 11.9154 15.8707C14.0362 14.8979 15.587 12.8963 15.9291 10.5049H12.9778ZM15.9291 8.50488C15.587 6.11342 14.0362 4.11189 11.9154 3.13902C11.9647 3.25616 12.0122 3.37558 12.0576 3.49691C12.5651 4.8502 12.8926 6.59509 12.9778 8.50488H15.9291ZM18 9.50488C18 14.4754 13.9706 18.5049 9 18.5049C4.02944 18.5049 0 14.4754 0 9.50488C0 4.53432 4.02944 0.504883 9 0.504883C13.9706 0.504883 18 4.53432 18 9.50488Z"
+                        fill="#20C75B"
+                      />
+                    </svg>
+                    <span>93</span>
+                  </div>
+                  <div class="btn">
+                    Кейсы
+                    <span>
+                      <svg
+                        width="17"
+                        height="16"
+                        viewBox="0 0 17 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.2071 8.71199C16.5976 8.32146 16.5976 7.6883 16.2071 7.29777L9.84314 0.933814C9.45262 0.54329 8.81946 0.54329 8.42893 0.933814C8.03841 1.32434 8.03841 1.9575 8.42893 2.34803L14.0858 8.00488L8.42893 13.6617C8.03841 14.0523 8.03841 14.6854 8.42893 15.0759C8.81946 15.4665 9.45262 15.4665 9.84315 15.0759L16.2071 8.71199ZM0.5 9.00488L15.5 9.00488L15.5 7.00488L0.5 7.00488L0.5 9.00488Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-3 card">
+              <div class="card__body">
+                <div class="card__body-foot">
+                  <div class="world-icon">
+                    <svg
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.58052 2.79697C8.83042 2.51511 8.97447 2.50488 9 2.50488C9.02553 2.50488 9.16958 2.51511 9.41948 2.79697C9.66834 3.07767 9.93815 3.5409 10.185 4.19915C10.5972 5.29837 10.8918 6.79699 10.9757 8.50488H7.02435C7.10822 6.79699 7.4028 5.29837 7.81501 4.19915C8.06185 3.5409 8.33166 3.07767 8.58052 2.79697ZM5.02218 8.50488C5.10742 6.59509 5.43487 4.8502 5.94235 3.49691C5.98785 3.37557 6.03525 3.25616 6.0846 3.13902C3.96378 4.11189 2.41296 6.11342 2.07089 8.50488H5.02218ZM2.07089 10.5049H5.02218C5.10742 12.4147 5.43487 14.1596 5.94235 15.5129C5.98785 15.6342 6.03525 15.7536 6.0846 15.8707C3.96378 14.8979 2.41296 12.8963 2.07089 10.5049ZM7.02435 10.5049H10.9757C10.8918 12.2128 10.5972 13.7114 10.185 14.8106C9.93815 15.4689 9.66834 15.9321 9.41948 16.2128C9.16958 16.4947 9.02553 16.5049 9 16.5049C8.97447 16.5049 8.83042 16.4947 8.58052 16.2128C8.33166 15.9321 8.06185 15.4689 7.81501 14.8106C7.4028 13.7114 7.10822 12.2128 7.02435 10.5049ZM12.9778 10.5049C12.8926 12.4147 12.5651 14.1596 12.0576 15.5129C12.0122 15.6342 11.9647 15.7536 11.9154 15.8707C14.0362 14.8979 15.587 12.8963 15.9291 10.5049H12.9778ZM15.9291 8.50488C15.587 6.11342 14.0362 4.11189 11.9154 3.13902C11.9647 3.25616 12.0122 3.37558 12.0576 3.49691C12.5651 4.8502 12.8926 6.59509 12.9778 8.50488H15.9291ZM18 9.50488C18 14.4754 13.9706 18.5049 9 18.5049C4.02944 18.5049 0 14.4754 0 9.50488C0 4.53432 4.02944 0.504883 9 0.504883C13.9706 0.504883 18 4.53432 18 9.50488Z"
+                        fill="#20C75B"
+                      />
+                    </svg>
+                    <span>253</span>
+                  </div>
+                  <div class="btn">
+                    Магазин
+                    <span>
+                      <svg
+                        width="17"
+                        height="16"
+                        viewBox="0 0 17 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.2071 8.71199C16.5976 8.32146 16.5976 7.6883 16.2071 7.29777L9.84314 0.933814C9.45262 0.54329 8.81946 0.54329 8.42893 0.933814C8.03841 1.32434 8.03841 1.9575 8.42893 2.34803L14.0858 8.00488L8.42893 13.6617C8.03841 14.0523 8.03841 14.6854 8.42893 15.0759C8.81946 15.4665 9.45262 15.4665 9.84315 15.0759L16.2071 8.71199ZM0.5 9.00488L15.5 9.00488L15.5 7.00488L0.5 7.00488L0.5 9.00488Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <Footer />
+      </div>
+
+      <div class="navbar">
+        <div class="navbar__menu">
+          <a href="#" class="navbar__manu-link">
+            <img src="/menu1-icon.png" alt="icon" />
+          </a>
+          <a href="#" class="navbar__manu-link">
+            <img src="/menu2-icon.png" alt="icon" />
+          </a>
+          <a href="#" class="navbar__manu-link">
+            <img src="/menu3-icon.png" alt="icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/swiper-bundle.css";
+
+import { ref } from "vue";
+</script>
+
+<style lang="scss" scoped>
+.main {
+  width: 100%;
+  padding: 0 30px;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 70px;
+      height: 45px;
+      transition: all 0.3s ease-in-out;
+      opacity: 0.5;
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+        filter: drop-shadow(0px 0px 20px #a759ff);
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    &__head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      height: 320px;
+
+      &-slider {
+        width: 70%;
+        height: 100%;
+        background: url("/bag-2-1.png"),
+          linear-gradient(
+            325deg,
+            rgba(16, 49, 32, 1) 20%,
+            rgba(32, 7, 64, 1) 43%,
+            rgba(126, 58, 177, 1) 100%
+          );
+        background-repeat: no-repeat;
+        background-position: right bottom;
+
+        border-radius: 20px;
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+        // background-size: 100%;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
+          // background-size: 700px;
+        }
+      }
+      .swiper {
+        height: 100%;
+        border-radius: 20px;
+      }
+
+      .swiper-slide {
+        width: 100% !important;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding-left: 40px;
+        position: relative;
+
+        img {
+          position: absolute;
+          right: 0;
+          bottom: -1px;
+          object-fit: contain;
+          z-index: -1;
+          transition: all 0.4s ease-in-out;
+          border-radius: 20px;
+
+          &:hover {
+            transform: scale(1.1);
+            border-radius: 20px;
+          }
+        }
+
+        h1 {
+          max-width: 404px;
+          height: 168px;
+          font-weight: 800;
+          font-size: 56px;
+          line-height: 56px;
+
+          color: #ffffff;
+        }
+        p {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
+
+          color: rgba(255, 255, 255, 0.8);
+
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+
+          /* Inside auto layout */
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+
+          margin: 20px 0;
+        }
+      }
+
+      &-gift {
+        width: 25%;
+        height: 100%;
+        border-radius: 20px;
+
+        background: url(/bag-2.png),
+          linear-gradient(
+            150deg,
+            rgb(16 69 41) 20%,
+            rgb(32, 7, 64) 43%,
+            rgb(126, 58, 177) 100%
+          );
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 100%;
+
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
+          background-size: 350px;
+        }
+
+        h2 {
+          font-weight: 800;
+          font-size: 20px;
+          color: #ffffff;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+          max-width: 275px;
+          margin: 0 auto;
+          padding: 20px 10px 0 10px;
+        }
+      }
+    }
+
+    &__body {
+      margin: 30px 0;
+
+      .cards {
+        width: 100%;
+        height: 100%;
+        max-height: 405px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        cursor: pointer;
+
+        .card {
+          width: 33%;
+          height: 100%;
+          position: relative;
+          padding-top: 5px;
+          height: 405px;
+          transition: all 0.4s ease-in-out;
+
+          &__new {
+            width: 58px;
+            height: 30px;
+            background: linear-gradient(
+              0deg,
+              rgba(189, 216, 17, 1) 0%,
+              rgba(239, 247, 79, 1) 100%
+            );
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+
+            color: #000;
+            font-weight: 700;
+            text-align: center;
+
+            display: flex;
+            align-self: center;
+            justify-content: center;
+
+            position: absolute;
+            top: 0;
+            left: 30px;
+          }
+
+          &__body {
+            background: url("/body1-img.png") no-repeat,
+              linear-gradient(
+                325deg,
+                rgba(41, 5, 68, 1) 0%,
+                rgba(63, 6, 124, 1) 100%
+              );
+            border-radius: 20px;
+            height: 100%;
+            background-size: 100%;
+            transition: all 0.4s ease-in-out;
+
+            &-foot {
+              position: absolute;
+              bottom: 30px;
+              left: 30px;
+
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              .world-icon {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                span {
+                  font-size: 14px;
+                  color: #20c75b;
+                  font-weight: 700;
+                  font-size: 14px;
+                  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+                }
+              }
+
+              .btn {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 700;
+                font-size: 32px;
+                color: #ecf0f9;
+
+                &:hover {
+                  gap: 15px;
+                }
+
+                span {
+                  width: 32px;
+                  height: 32px;
+                  background: rgba(255, 255, 255, 0.2);
+                  border-radius: 6px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
+
+            .card__body {
+              background-size: 450px;
+
+              &-foot {
+
+              .btn {
+                gap: 15px;
+              }
+            }
+            }
+          }
+        }
+
+        .card-2 {
+          .card__body {
+            background: url("/body2-img.png"),
+              linear-gradient(
+                325deg,
+                rgba(41, 5, 68, 1) 0%,
+                rgba(63, 6, 124, 1) 100%
+              ) !important;
+            background-repeat: no-repeat !important;
+            background-size: 100% !important;
+          }
+
+          &:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
+
+            .card__body {
+              background-size: 450px !important;
+            }
+          }
+        }
+
+        .card-3 {
+          .card__body {
+            background: url("/body3-img.png"),
+              linear-gradient(
+                325deg,
+                rgba(41, 5, 68, 1) 0%,
+                rgba(63, 6, 124, 1) 100%
+              ) !important;
+            background-repeat: no-repeat !important;
+            background-size: 100% !important;
+          }
+
+          &:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
+
+            .card__body {
+              background-size: 450px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>
