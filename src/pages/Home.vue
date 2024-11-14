@@ -6,33 +6,85 @@
         <div class="content__head">
           <div class="content__head-slider">
             <swiper
+              :modules="modules"
               :slides-per-view="1"
               :space-between="30"
+              :pagination="{ clickable: true }"
               :loop="true"
-              :autoplay="{ delay: 5000 }"
-              :pagination="{ clickable: true, type: 'fraction' }"
+              :autoplay="{ delay: 1000 }"
+              :navigation="{
+                nextEl: '.intro__swiper-button-next',
+                prevEl: '.intro__swiper-button-prev',
+              }"
+              :grab-cursor="true"
             >
               <swiper-slide>
-                <img src="/bag-1.png" alt="" />
-                <h1>
-                  Нашёл промокод <br />
-                  в соцсетях?
-                </h1>
-                <p>Активируй его и забирай свой бонус!</p>
+                <img src="/slide-bg1.png" alt="background" />
+                <div class="swiper__slide-head">
+                  <h1>
+                    Нашёл промокод <br />
+                    в соцсетях?
+                  </h1>
+                  <p>Активируй его и забирай свой бонус!</p>
+                </div>
+                <a class="swiper__slide-link" href="#">
+                  <svg
+                    width="26"
+                    height="16"
+                    viewBox="0 0 37 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M36.707 8.71246C37.0976 8.32199 37.0977 7.68882 36.7072 7.29824L30.3442 0.933354C29.9537 0.542772 29.3205 0.54268 28.93 0.933148C28.5394 1.32361 28.5393 1.95678 28.9298 2.34736L34.5858 8.00504L28.9281 13.6611C28.5375 14.0515 28.5374 14.6847 28.9279 15.0753C29.3184 15.4659 29.9515 15.466 30.3421 15.0755L36.707 8.71246ZM-0.000145716 9L35.9999 9.00525L36.0001 7.00525L0.000145716 7L-0.000145716 9Z"
+                      fill="black"
+                    />
+                  </svg>
+                </a>
               </swiper-slide>
 
               <swiper-slide>
                 <h1>Слайд 2</h1>
                 <p>Описание для второго слайда</p>
               </swiper-slide>
+
               <swiper-slide>
                 <h1>Слайд 3</h1>
                 <p>Описание для второго слайда</p>
               </swiper-slide>
-              <swiper-slide>
-                <h1>Слайд 4</h1>
-                <p>Описание для второго слайда</p>
-              </swiper-slide>
+
+              <div class="swiper__btns">
+                <div class="intro__swiper-button-prev right">
+                  <svg
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.792893 7.28801C0.402369 7.67854 0.402369 8.3117 0.792893 8.70223L7.15685 15.0662C7.54738 15.4567 8.18054 15.4567 8.57107 15.0662C8.96159 14.6757 8.96159 14.0425 8.57107 13.652L2.91421 7.99512L8.57107 2.33826C8.96159 1.94774 8.96159 1.31457 8.57107 0.92405C8.18054 0.533526 7.54738 0.533526 7.15685 0.92405L0.792893 7.28801ZM16.5 6.99512L1.5 6.99512L1.5 8.99512L16.5 8.99512L16.5 6.99512Z"
+                      fill="black"
+                      fill-opacity="0.42"
+                    />
+                  </svg>
+                </div>
+                <div class="intro__swiper-button-next left">
+                  <svg
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.2071 8.71199C16.5976 8.32146 16.5976 7.6883 16.2071 7.29777L9.84315 0.933814C9.45262 0.54329 8.81946 0.54329 8.42893 0.933814C8.03841 1.32434 8.03841 1.9575 8.42893 2.34803L14.0858 8.00488L8.42893 13.6617C8.03841 14.0523 8.03841 14.6854 8.42893 15.0759C8.81946 15.4665 9.45262 15.4665 9.84315 15.0759L16.2071 8.71199ZM0.5 9.00488L15.5 9.00488L15.5 7.00488L0.5 7.00488L0.5 9.00488Z"
+                      fill="black"
+                      fill-opacity="0.42"
+                    />
+                  </svg>
+                </div>
+              </div>
             </swiper>
           </div>
 
@@ -87,7 +139,7 @@
             <div class="card-2 card">
               <div class="card__new"><span> NEW</span></div>
               <div class="card__body">
-               <div class="card__body-foot">
+                <div class="card__body-foot">
                   <div class="world-icon">
                     <svg
                       width="18"
@@ -192,11 +244,13 @@
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 
-import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/swiper-bundle.css";
+import { Swiper, SwiperSlide } from "swiper/vue";
 
-import { ref } from "vue";
+import "swiper/css";
+import "swiper/css/navigation";
+
+const modules = [Navigation, Pagination, Scrollbar, A11y];
 </script>
 
 <style lang="scss" scoped>
@@ -259,13 +313,14 @@ import { ref } from "vue";
       &-slider {
         width: 70%;
         height: 100%;
-        background: url("/bag-2-1.png"),
-          linear-gradient(
-            325deg,
-            rgba(16, 49, 32, 1) 20%,
-            rgba(32, 7, 64, 1) 43%,
-            rgba(126, 58, 177, 1) 100%
-          );
+        // background: url("/slide-bg1.png"),
+        //   linear-gradient(
+        //     325deg,
+        //     rgba(16, 49, 32, 1) 20%,
+        //     rgba(32, 7, 64, 1) 43%,
+        //     rgba(126, 58, 177, 1) 100%
+        //   );
+        // background: url("/slide-bg1.png");
         background-repeat: no-repeat;
         background-position: right bottom;
 
@@ -274,16 +329,46 @@ import { ref } from "vue";
         transition: all 0.4s ease-in-out;
         // background-size: 100%;
         cursor: pointer;
-
-        &:hover {
-          transform: scale(1.02);
-          box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
-          // background-size: 700px;
-        }
       }
       .swiper {
         height: 100%;
         border-radius: 20px;
+      }
+
+      .swiper__btns {
+        position: absolute;
+        right: 50px;
+        bottom: 15px;
+        z-index: 999;
+
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+
+        .left,
+        .right {
+          width: 30px;
+          height: 30px;
+          background: #ffffffb3;
+          color: #000;
+          padding: 10px;
+          border-radius: 100px;
+
+          display: flex;
+          align-self: center;
+          justify-content: center;
+          transition: all 0.3s ease-in-out;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .left:hover,
+        .right:hover {
+          background: #ffffff;
+        }
       }
 
       .swiper-slide {
@@ -305,10 +390,10 @@ import { ref } from "vue";
           transition: all 0.4s ease-in-out;
           border-radius: 20px;
 
-          &:hover {
-            transform: scale(1.1);
-            border-radius: 20px;
-          }
+          // &:hover {
+          //   transform: scale(1.1);
+          //   border-radius: 20px;
+          // }
         }
 
         h1 {
@@ -338,6 +423,27 @@ import { ref } from "vue";
 
           margin: 20px 0;
         }
+
+        .swiper__slide-link {
+          width: 100%;
+          max-width: 6rem;
+          text-decoration: none;
+          background: #ffffffb3;
+          border-radius: 16px;
+          padding: 8px;
+          height: 42px;
+          position: relative;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: #ffffff;
+          }
+        }
       }
 
       &-gift {
@@ -360,11 +466,11 @@ import { ref } from "vue";
         transition: all 0.4s ease-in-out;
         cursor: pointer;
 
-        &:hover {
-          transform: scale(1.02);
-          box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
-          background-size: 350px;
-        }
+        // &:hover {
+        //   transform: scale(1.02);
+        //   box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
+        //   background-size: 350px;
+        // }
 
         h2 {
           font-weight: 800;
@@ -390,6 +496,7 @@ import { ref } from "vue";
         justify-content: space-between;
         gap: 30px;
         cursor: pointer;
+        transition: all 0.4s ease-in-out;
 
         .card {
           width: 33%;
@@ -424,16 +531,16 @@ import { ref } from "vue";
           }
 
           &__body {
-            background: url("/body1-img.png") no-repeat,
-              linear-gradient(
-                325deg,
-                rgba(41, 5, 68, 1) 0%,
-                rgba(63, 6, 124, 1) 100%
-              );
+            background-color: rgb(54, 6, 90);
+            background-image: url("/body1-img.png"); // Фоновое изображение
+            background-size: 400px;
+            background-repeat: no-repeat;
+            background-position: center right;
             border-radius: 20px;
             height: 100%;
-            background-size: 100%;
-            transition: all 0.4s ease-in-out;
+            transition: background-color 0.4s ease-in-out,
+            background-image 0.4s ease-in-out,
+            background-size 0.4s ease-in-out; // Анимация фона
 
             &-foot {
               position: absolute;
@@ -465,6 +572,7 @@ import { ref } from "vue";
                 font-weight: 700;
                 font-size: 32px;
                 color: #ecf0f9;
+                transition: all 0.4s ease-in-out;
 
                 &:hover {
                   gap: 15px;
@@ -484,62 +592,54 @@ import { ref } from "vue";
           }
 
           &:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
-
             .card__body {
-              background-size: 450px;
+              background-color: rgba(63, 6, 124, 1); // Новый цвет фона
+              background-image: url("/body1-img.png"); // Новое фоновое изображение
+              background-size: 110%; // Изменение размера фона для анимации
 
               &-foot {
+                .btn {
+                  gap: 15px;
 
-              .btn {
-                gap: 15px;
+                  span {
+                    background: #fff;
+
+                    svg path {
+                      fill: #000000;
+                    }
+                  }
+                }
               }
-            }
             }
           }
         }
 
         .card-2 {
           .card__body {
-            background: url("/body2-img.png"),
-              linear-gradient(
-                325deg,
-                rgba(41, 5, 68, 1) 0%,
-                rgba(63, 6, 124, 1) 100%
-              ) !important;
-            background-repeat: no-repeat !important;
-            background-size: 100% !important;
+            background-color: rgb(54, 6, 90);
+            background-image: url("/body2-img.png");
           }
 
           &:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
-
             .card__body {
-              background-size: 450px !important;
+              background-color: rgba(63, 6, 124, 1); // Новый цвет фона
+              background-image: url("/body2-img.png"); // Новое фоновое изображение
+              background-size: 110%;
             }
           }
         }
 
         .card-3 {
           .card__body {
-            background: url("/body3-img.png"),
-              linear-gradient(
-                325deg,
-                rgba(41, 5, 68, 1) 0%,
-                rgba(63, 6, 124, 1) 100%
-              ) !important;
-            background-repeat: no-repeat !important;
-            background-size: 100% !important;
+            background-color: rgb(54, 6, 90);
+            background-image: url("/body3-img.png");
           }
 
           &:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
-
             .card__body {
-              background-size: 450px !important;
+              background-color: rgba(63, 6, 124, 1); // Новый цвет фона
+              background-image: url("/body3-img.png"); // Новое фоновое изображение
+              background-size: 110%;
             }
           }
         }

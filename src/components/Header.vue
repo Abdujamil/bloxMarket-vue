@@ -101,7 +101,7 @@
 <script setup>
 import { ref } from "vue";
 
-const isLogin = ref(false);
+const isLogin = ref(true);
 
 </script>
 <style lang="scss" scoped>
