@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="footer__left">
       <div class="play">
         <div class="play__age">
@@ -150,7 +150,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 <script setup>
 import { ref, computed } from "vue";
@@ -207,6 +207,12 @@ const availableLanguages = computed(() => {
 
 <style lang="scss" scoped>
 .footer {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-bottom: 40px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
