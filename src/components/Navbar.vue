@@ -1,15 +1,15 @@
 <template>
   <div class="navbar">
     <div class="navbar__menu">
-      <a href="#" class="navbar__manu-link">
+      <RouterLink to="/coin" class="navbar__manu-link">
         <img src="/menu1-icon.png" alt="icon" />
-      </a>
-      <a href="#" class="navbar__manu-link">
+      </RouterLink>
+      <RouterLink to="/case" class="navbar__manu-link">
         <img src="/menu2-icon.png" alt="icon" />
-      </a>
-      <a href="#" class="navbar__manu-link">
+      </RouterLink>
+      <RouterLink to="/shop" class="navbar__manu-link">
         <img src="/menu3-icon.png" alt="icon" />
-      </a>
+      </RouterLink>
     </div>
   </div>
 </template>
