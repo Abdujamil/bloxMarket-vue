@@ -39,7 +39,8 @@
     transition: all 0.3s ease-in-out;
     opacity: 0.5;
 
-    &:hover {
+    &:hover, 
+    &.router-link-active{
       transform: scale(1.1);
       opacity: 1;
       filter: drop-shadow(0px 0px 20px #a759ff);
