@@ -53,7 +53,7 @@
         <img src="/ava-img.png" alt="ava" />
       </div>
 
-      <a href="#" class="auth__btn-support">
+      <a href="#" class="auth__btn-support auth__btn-notification ">
         <svg
           width="21"
           height="23"
@@ -71,7 +71,7 @@
         </svg>
       </a>
 
-      <a href="#" class="auth__btn-support">
+      <a href="#" class="auth__btn-support auth__btn-settings">
         <svg
           width="23"
           height="23"
@@ -143,11 +143,8 @@ const isLogin = ref(true);
       color: #151022;
       font-size: 20px;
       font-weight: bold;
-      transition: filter 0.3s ease-in-out;
+      transition: filter 0.3s ease-in-out, background-size 0.4s ease-in-out;
 
-      &:hover {
-        filter: drop-shadow(0px 0px 60px #48fd7880);
-      }
 
       &--topup {
         color: #fff;
@@ -156,10 +153,12 @@ const isLogin = ref(true);
           rgba(95, 10, 167, 1) 0%,
           rgba(167, 89, 255, 1) 100%
         );
+        background-size: 100%;
         filter: drop-shadow(0px 0px 20px #a352ea50);
 
         &:hover {
-          filter: drop-shadow(0px 0px 60px #a452ea);
+          background: linear-gradient(160deg, rgba(61,7,105,1) 0%, rgba(131,36,238,1) 100%);
+          background-size: 150%;
         }
       }
 
@@ -170,6 +169,7 @@ const isLogin = ref(true);
           rgba(23, 216, 83, 1) 100%
         );
       }
+
     }
 
     .auth__check {
@@ -186,6 +186,15 @@ const isLogin = ref(true);
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all .3s ease-in-out;
+
+      opacity: .5;
+
+
+      &:hover{
+        opacity: 1;
+        transform: scale(1.1);
+      }
     }
 
     .auth__check {
@@ -206,13 +215,23 @@ const isLogin = ref(true);
       height: 43px;
       display: block;
       border-radius: 8px;
-
+      
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
         cursor: pointer;
+        transition: all .4s ease-in-out;
+        opacity: .5;
+      }
+
+
+      &:hover{
+        img{
+          opacity: 1;
+          transform: scale(1.1);
+        }
       }
     }
   }

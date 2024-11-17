@@ -39,17 +39,17 @@
               </svg>
             </a>
           </swiper-slide>
-  
+
           <swiper-slide>
             <h1>Слайд 2</h1>
             <p>Описание для второго слайда</p>
           </swiper-slide>
-  
+
           <swiper-slide>
             <h1>Слайд 3</h1>
             <p>Описание для второго слайда</p>
           </swiper-slide>
-  
+
           <div class="swiper__btns">
             <div class="intro__swiper-button-prev right">
               <svg
@@ -84,12 +84,29 @@
           </div>
         </swiper>
       </div>
-  
+
       <div class="content__head-gift">
         <h2>Ежедневные конкурсы на игровые предметы</h2>
+
+        <div class="gift-btn">
+          <a class="gift-link" href="#">
+            <svg
+              width="26"
+              height="16"
+              viewBox="0 0 37 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M36.707 8.71246C37.0976 8.32199 37.0977 7.68882 36.7072 7.29824L30.3442 0.933354C29.9537 0.542772 29.3205 0.54268 28.93 0.933148C28.5394 1.32361 28.5393 1.95678 28.9298 2.34736L34.5858 8.00504L28.9281 13.6611C28.5375 14.0515 28.5374 14.6847 28.9279 15.0753C29.3184 15.4659 29.9515 15.466 30.3421 15.0755L36.707 8.71246ZM-0.000145716 9L35.9999 9.00525L36.0001 7.00525L0.000145716 7L-0.000145716 9Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-  
+
     <div class="content__body">
       <div class="cards">
         <div class="card">
@@ -230,356 +247,385 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 </script>
 
 <style lang="scss" scoped>
+.content {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
 
-
-  .content {
+  &__head {
     width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
-    &__head {
-      width: 100%;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: 30px;
+    height: 320px;
+
+    &-slider {
+      width: 70%;
+      height: 100%;
+      // background: url("/slide-bg1.png"),
+      //   linear-gradient(
+      //     325deg,
+      //     rgba(16, 49, 32, 1) 20%,
+      //     rgba(32, 7, 64, 1) 43%,
+      //     rgba(126, 58, 177, 1) 100%
+      //   );
+      // background: url("/slide-bg1.png");
+      background-repeat: no-repeat;
+      background-position: right bottom;
+
+      border-radius: 20px;
+      z-index: 1;
+      transition: all 0.4s ease-in-out;
+      // background-size: 100%;
+      cursor: pointer;
+    }
+    .swiper {
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    .swiper__btns {
+      position: absolute;
+      right: 50px;
+      bottom: 15px;
+      z-index: 999;
+
       display: flex;
       align-items: center;
-      justify-content: space-between;
+
       gap: 20px;
-      height: 320px;
 
-      &-slider {
-        width: 70%;
-        height: 100%;
-        // background: url("/slide-bg1.png"),
-        //   linear-gradient(
-        //     325deg,
-        //     rgba(16, 49, 32, 1) 20%,
-        //     rgba(32, 7, 64, 1) 43%,
-        //     rgba(126, 58, 177, 1) 100%
-        //   );
-        // background: url("/slide-bg1.png");
-        background-repeat: no-repeat;
-        background-position: right bottom;
+      .left,
+      .right {
+        width: 30px;
+        height: 30px;
+        background: #ffffffb3;
+        color: #000;
+        padding: 10px;
+        border-radius: 100px;
 
-        border-radius: 20px;
-        z-index: 1;
-        transition: all 0.4s ease-in-out;
-        // background-size: 100%;
-        cursor: pointer;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
       }
-      .swiper {
-        height: 100%;
-        border-radius: 20px;
+      .left:hover,
+      .right:hover {
+        background: #ffffff;
       }
+    }
 
-      .swiper__btns {
+    .swiper-slide {
+      width: 100% !important;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      padding-left: 40px;
+      position: relative;
+
+      img {
         position: absolute;
-        right: 50px;
-        bottom: 15px;
-        z-index: 999;
+        right: 0;
+        bottom: -1px;
+        object-fit: contain;
+        z-index: -1;
+        transition: all 0.4s ease-in-out;
+        border-radius: 20px;
 
+        // &:hover {
+        //   transform: scale(1.1);
+        //   border-radius: 20px;
+        // }
+      }
+
+      h1 {
+        max-width: 404px;
+        height: 168px;
+        font-weight: 800;
+        font-size: 56px;
+        line-height: 56px;
+
+        color: #ffffff;
+      }
+      p {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
         display: flex;
         align-items: center;
 
-        gap: 20px;
+        color: rgba(255, 255, 255, 0.8);
 
-        .left,
-        .right {
-          width: 30px;
-          height: 30px;
-          background: #ffffffb3;
-          color: #000;
-          padding: 10px;
-          border-radius: 100px;
-
-          display: flex;
-          align-self: center;
-          justify-content: center;
-          transition: all 0.3s ease-in-out;
-
-          svg {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .left:hover,
-        .right:hover {
-          background: #ffffff;
-        }
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+        margin: 20px 0;
       }
 
-      .swiper-slide {
-        width: 100% !important;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        padding-left: 40px;
+      .swiper__slide-link {
+        width: 100%;
+        max-width: 6rem;
+        text-decoration: none;
+        background: #ffffffb3;
+        border-radius: 16px;
+        padding: 8px;
+        height: 42px;
         position: relative;
 
-        img {
-          position: absolute;
-          right: 0;
-          bottom: -1px;
-          object-fit: contain;
-          z-index: -1;
-          transition: all 0.4s ease-in-out;
-          border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-          // &:hover {
-          //   transform: scale(1.1);
-          //   border-radius: 20px;
-          // }
-        }
+        transition: all 0.3s ease-in-out;
 
-        h1 {
-          max-width: 404px;
-          height: 168px;
-          font-weight: 800;
-          font-size: 56px;
-          line-height: 56px;
-
-          color: #ffffff;
-        }
-        p {
-          font-weight: 600;
-          font-size: 20px;
-          line-height: 24px;
-          display: flex;
-          align-items: center;
-
-          color: rgba(255, 255, 255, 0.8);
-
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-
-          /* Inside auto layout */
-          flex: none;
-          order: 1;
-          flex-grow: 0;
-
-          margin: 20px 0;
-        }
-
-        .swiper__slide-link {
-          width: 100%;
-          max-width: 6rem;
-          text-decoration: none;
-          background: #ffffffb3;
-          border-radius: 16px;
-          padding: 8px;
-          height: 42px;
-          position: relative;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          transition: all 0.3s ease-in-out;
-
-          &:hover {
-            background: #ffffff;
-          }
-        }
-      }
-
-      &-gift {
-        width: 25%;
-        height: 100%;
-        border-radius: 20px;
-
-        background: url(/bag-2.png),
-          linear-gradient(
-            150deg,
-            rgb(16 69 41) 20%,
-            rgb(32, 7, 64) 43%,
-            rgb(126, 58, 177) 100%
-          );
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        background-size: 100%;
-
-        z-index: 1;
-        transition: all 0.4s ease-in-out;
-        cursor: pointer;
-
-        // &:hover {
-        //   transform: scale(1.02);
-        //   box-shadow: 0px 0px 60px 0px rgba(97, 6, 167, 0.267);
-        //   background-size: 350px;
-        // }
-
-        h2 {
-          font-weight: 800;
-          font-size: 20px;
-          color: #ffffff;
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-          max-width: 275px;
-          margin: 0 auto;
-          padding: 20px 10px 0 10px;
+        &:hover {
+          background: #ffffff;
         }
       }
     }
 
-    &__body {
-      margin: 30px 0;
+    &-gift {
+      width: 30%;
+      height: 100%;
+      border-radius: 20px;
 
-      .cards {
+      background: url(/bag-2.png),
+        linear-gradient(
+          150deg,
+          rgb(16 69 41) 20%,
+          rgb(32, 7, 64) 43%,
+          rgb(126, 58, 177) 100%
+        );
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: 100%;
+
+      z-index: 1;
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+      position: relative;
+
+      h2 {
+        font-weight: 800;
+        font-size: 20px;
+        color: #ffffff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+        max-width: 275px;
+        margin: 0 auto;
+        padding: 20px 10px 10px 10px;
+      }
+
+      .gift-btn{
+        max-width: 275px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .gift-link {
         width: 100%;
-        height: 100%;
-        max-height: 405px;
+        max-width: 5rem;
+        text-decoration: none;
+        background: linear-gradient(
+          325deg,
+          rgb(95 10 167 / 4%) 0%,
+          rgb(167 89 255) 100%
+        );
+        border-radius: 8px;
+        padding: 4px;
+        height: 35px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-        cursor: pointer;
+        justify-content: center;
+        transition: all 0.3s ease-in-out, background-size 0.3s ease-in-out;
+        background-size: 100%;
+
+        svg path {
+          fill: #ffffff7e;
+        }
+
+        &:hover {
+          background-size: 200%;
+
+          svg path {
+            fill: #ffffff;
+          }
+        }
+      }
+
+      // &:hover {
+      //   .gift-link {
+      //     opacity: 1;
+      //   }
+      // }
+    }
+  }
+
+  &__body {
+    margin: 30px 0;
+
+    .cards {
+      width: 100%;
+      height: 100%;
+      max-height: 405px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      .card {
+        width: 33%;
+        height: 100%;
+        position: relative;
+        padding-top: 5px;
+        height: 405px;
         transition: all 0.4s ease-in-out;
 
-        .card {
-          width: 33%;
+        &__new {
+          width: 58px;
+          height: 30px;
+          background: linear-gradient(
+            0deg,
+            rgba(189, 216, 17, 1) 0%,
+            rgba(239, 247, 79, 1) 100%
+          );
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+
+          color: #000;
+          font-weight: 700;
+          text-align: center;
+
+          display: flex;
+          align-self: center;
+          justify-content: center;
+
+          position: absolute;
+          top: 0;
+          left: 30px;
+        }
+
+        &__body {
+          background-color: rgb(54, 6, 90);
+          background-image: url("/body1-img.png"); // Фоновое изображение
+          background-size: 400px;
+          background-repeat: no-repeat;
+          background-position: center right;
+          border-radius: 20px;
           height: 100%;
-          position: relative;
-          padding-top: 5px;
-          height: 405px;
-          transition: all 0.4s ease-in-out;
+          transition: background-color 0.4s ease-in-out,
+            background-image 0.4s ease-in-out, background-size 0.4s ease-in-out; // Анимация фона
 
-          &__new {
-            width: 58px;
-            height: 30px;
-            background: linear-gradient(
-              0deg,
-              rgba(189, 216, 17, 1) 0%,
-              rgba(239, 247, 79, 1) 100%
-            );
-            border-bottom-right-radius: 8px;
-            border-bottom-left-radius: 8px;
-
-            color: #000;
-            font-weight: 700;
-            text-align: center;
+          &-foot {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
 
             display: flex;
-            align-self: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
 
-            position: absolute;
-            top: 0;
-            left: 30px;
-          }
-
-          &__body {
-            background-color: rgb(54, 6, 90);
-            background-image: url("/body1-img.png"); // Фоновое изображение
-            background-size: 400px;
-            background-repeat: no-repeat;
-            background-position: center right;
-            border-radius: 20px;
-            height: 100%;
-            transition: background-color 0.4s ease-in-out,
-              background-image 0.4s ease-in-out,
-              background-size 0.4s ease-in-out; // Анимация фона
-
-            &-foot {
-              position: absolute;
-              bottom: 30px;
-              left: 30px;
-
+            .world-icon {
               display: flex;
-              flex-direction: column;
+              align-items: center;
+              gap: 8px;
+
+              span {
+                font-size: 14px;
+                color: #20c75b;
+                font-weight: 700;
+                font-size: 14px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+              }
+            }
+
+            .btn {
+              display: flex;
+              align-items: center;
               gap: 10px;
+              font-weight: 700;
+              font-size: 32px;
+              color: #ecf0f9;
+              transition: all 0.4s ease-in-out;
 
-              .world-icon {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-
-                span {
-                  font-size: 14px;
-                  color: #20c75b;
-                  font-weight: 700;
-                  font-size: 14px;
-                  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-                }
+              &:hover {
+                gap: 15px;
               }
 
-              .btn {
+              span {
+                width: 32px;
+                height: 32px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 6px;
                 display: flex;
                 align-items: center;
-                gap: 10px;
-                font-weight: 700;
-                font-size: 32px;
-                color: #ecf0f9;
-                transition: all 0.4s ease-in-out;
-
-                &:hover {
-                  gap: 15px;
-                }
-
-                span {
-                  width: 32px;
-                  height: 32px;
-                  background: rgba(255, 255, 255, 0.2);
-                  border-radius: 6px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                }
+                justify-content: center;
               }
             }
           }
+        }
 
-          &:hover {
-            .card__body {
-              background-color: rgba(63, 6, 124, 1); // Новый цвет фона
-              background-image: url("/body1-img.png"); // Новое фоновое изображение
-              background-size: 110%; // Изменение размера фона для анимации
+        &:hover {
+          .card__body {
+            background-color: rgba(63, 6, 124, 1); // Новый цвет фона
+            background-image: url("/body1-img.png"); // Новое фоновое изображение
+            background-size: 110%; // Изменение размера фона для анимации
 
-              &-foot {
-                .btn {
-                  gap: 15px;
+            &-foot {
+              .btn {
+                gap: 15px;
 
-                  span {
-                    background: #fff;
+                span {
+                  background: #fff;
 
-                    svg path {
-                      fill: #000000;
-                    }
+                  svg path {
+                    fill: #000000;
                   }
                 }
               }
             }
           }
         }
+      }
 
-        .card-2 {
-          .card__body {
-            background-color: rgb(54, 6, 90);
-            background-image: url("/body2-img.png");
-          }
-
-          &:hover {
-            .card__body {
-              background-color: rgba(63, 6, 124, 1); // Новый цвет фона
-              background-image: url("/body2-img.png"); // Новое фоновое изображение
-              background-size: 110%;
-            }
-          }
+      .card-2 {
+        .card__body {
+          background-color: rgb(54, 6, 90);
+          background-image: url("/body2-img.png");
         }
 
-        .card-3 {
+        &:hover {
           .card__body {
-            background-color: rgb(54, 6, 90);
-            background-image: url("/body3-img.png");
+            background-color: rgba(63, 6, 124, 1); // Новый цвет фона
+            background-image: url("/body2-img.png"); // Новое фоновое изображение
+            background-size: 110%;
           }
+        }
+      }
 
-          &:hover {
-            .card__body {
-              background-color: rgba(63, 6, 124, 1); // Новый цвет фона
-              background-image: url("/body3-img.png"); // Новое фоновое изображение
-              background-size: 110%;
-            }
+      .card-3 {
+        .card__body {
+          background-color: rgb(54, 6, 90);
+          background-image: url("/body3-img.png");
+        }
+
+        &:hover {
+          .card__body {
+            background-color: rgba(63, 6, 124, 1); // Новый цвет фона
+            background-image: url("/body3-img.png"); // Новое фоновое изображение
+            background-size: 110%;
           }
         }
       }
     }
   }
-
+}
 </style>

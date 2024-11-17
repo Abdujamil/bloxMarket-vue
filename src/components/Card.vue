@@ -54,7 +54,7 @@
   padding: 20px;
   text-align: center;
   position: relative;
-  width: 190px;
+  width: 180px;
   color: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, background 0.4s ease, transform 0.4s ease;
@@ -154,7 +154,7 @@
         svg path {
           fill-opacity: 1;
         }
-      background-color: #b896f8a1;
+      background-color: #A759FF;
 
     }
 

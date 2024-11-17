@@ -63,11 +63,15 @@
     </div>
 
     <div class="shop__cards">
-      <Card
-        v-for="(card, index) in paginatedCards"
-        :key="index"
-        :cardData="card"
-      />
+      <div class="shop__body-cards">
+        <Card
+          v-for="(card, index) in paginatedCards"
+          :key="index"
+          :cardData="card"
+        />
+      </div>
+      
+      <Basket />
     </div>
 
     <!-- Навигация -->
@@ -129,6 +133,7 @@
 import { reactive, ref, computed } from "vue";
 import Dropdown from "../components/Dropdown.vue";
 import Card from "../components/Card.vue";
+import Basket from "../components/Basket.vue";
 
 // Состояние фильтров
 const filters = reactive({
@@ -208,18 +213,28 @@ const setPage = (page) => {
 <style lang="scss" scoped>
 .shop__container {
   width: 100%;
-  margin-top: 5px;
 
   &_filters {
     width: 100%;
   }
 
   .shop__cards {
+    width: 100%;
+    height: 100%;
+    min-height: 900px;
+
+    display: flex;
+    align-items: start;
+    gap: 30px;
+
+  }
+
+  .shop__body-cards {
     display: flex;
     height: 100%;
     align-items: start;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 15px;
     margin: 30px 0;
   }
 
@@ -232,7 +247,7 @@ const setPage = (page) => {
 
     .filter-item {
       width: 100%;
-      max-width: 20%;
+      max-width: 25%;
 
       &-search {
         display: flex;
@@ -289,6 +304,9 @@ const setPage = (page) => {
         background: #302d3e;
         border-radius: 8px;
       }
+    }
+    .hidden {
+      display: none;
     }
   }
 }

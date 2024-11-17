@@ -343,6 +343,7 @@ const availableLanguages = computed(() => {
         padding: 8px 10px;
         background-color: #22212e;
         border-radius: 8px;
+        width: 80px;
 
         display: flex;
         align-items: center;
@@ -350,31 +351,47 @@ const availableLanguages = computed(() => {
         gap: 10px;
         cursor: pointer;
         position: relative;
+        float: right;
 
         .arrow {
           display: flex;
         }
+        span{
+          font-size: 12px;
+        }
       }
+
 
       .language-dropdown {
         position: absolute;
         background-color: #22212e;
         padding: 8px 10px;
-        width: 100%;
+        width: 80px;
 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        top: 35px;
+        top: 32px;
+        right: 0;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
+        cursor: pointer;
 
         .language-option {
+          width: 100%;
           display: flex;
           align-items: center;
+          justify-content: start;
           gap: 10px;
+          
+
+          span{
+            font-size: 12px;
+          }
+
+
         }
       }
       .arrow {
