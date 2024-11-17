@@ -257,28 +257,18 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
     width: 100%;
     display: flex;
     align-items: center;
-    // justify-content: space-between;
     gap: 30px;
     height: 320px;
 
     &-slider {
-      width: 70%;
+      width: 90%;
       height: 100%;
-      // background: url("/slide-bg1.png"),
-      //   linear-gradient(
-      //     325deg,
-      //     rgba(16, 49, 32, 1) 20%,
-      //     rgba(32, 7, 64, 1) 43%,
-      //     rgba(126, 58, 177, 1) 100%
-      //   );
-      // background: url("/slide-bg1.png");
       background-repeat: no-repeat;
       background-position: right bottom;
 
       border-radius: 20px;
       z-index: 1;
       transition: all 0.4s ease-in-out;
-      // background-size: 100%;
       cursor: pointer;
     }
     .swiper {
@@ -333,6 +323,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
       position: relative;
 
       img {
+        width: 100%;
         position: absolute;
         right: 0;
         bottom: -1px;
@@ -340,11 +331,6 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         z-index: -1;
         transition: all 0.4s ease-in-out;
         border-radius: 20px;
-
-        // &:hover {
-        //   transform: scale(1.1);
-        //   border-radius: 20px;
-        // }
       }
 
       h1 {
@@ -422,7 +408,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         padding: 20px 10px 10px 10px;
       }
 
-      .gift-btn{
+      .gift-btn {
         max-width: 275px;
         margin: 0 auto;
         padding: 0 10px;
@@ -432,11 +418,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         width: 100%;
         max-width: 5rem;
         text-decoration: none;
-        background: linear-gradient(
-          325deg,
-          rgb(95 10 167 / 4%) 0%,
-          rgb(167 89 255) 100%
-        );
+        background: linear-gradient(325deg, rgba(95, 10, 167, 0.04) 0%, rgb(0 255 83) 100%);
         border-radius: 8px;
         padding: 4px;
         height: 35px;
