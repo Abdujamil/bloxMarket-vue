@@ -26,6 +26,7 @@
   min-height: 100vh;
 
   background-color: #0D0A15;
+  padding: 0 10px;
 
   &__menu {
     display: flex;
