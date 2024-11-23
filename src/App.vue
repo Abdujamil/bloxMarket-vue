@@ -1,15 +1,14 @@
 <template>
-  <Header />
+  <Navbar />
   <div class="main">
+    <Header />
     <div class="container">
       <div class="content">
         <RouterView />
-        <!-- <Home /> -->
       </div>
-      <Navbar />
     </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script setup>
@@ -28,11 +27,11 @@ import Header from "./components/Header.vue";
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    height: 100%;
 
     .content {
       width: 100%;
       max-width: 1400px;
+      min-height: 740px;
       margin: 0 auto;
       padding: 0 20px;
     }

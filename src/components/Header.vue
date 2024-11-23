@@ -110,7 +110,7 @@ const isLogin = ref(true);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 30px 25px 30px;
+  padding: 40px 30px 50px 0px;
 
   a {
     text-decoration: none;

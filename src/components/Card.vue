@@ -23,7 +23,7 @@
       </span>
       <span class="old-price">1140</span>
     </div>
-    <button class="add-to-cart">
+    <button v-if="idShowCart" @click="addToCart" class="add-to-cart">
       <svg
         width="18"
         height="18"
@@ -38,10 +38,66 @@
         />
       </svg>
     </button>
+
+    <div v-if="idShowButtons" class="card-add-btns">
+      <div class="counter">
+        <div 
+        v-if="count <= 1"
+        @click="deleteItem" 
+        class="del-icon"
+        >
+          <svg
+            width="10"
+            height="12"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.8335 13.9998C4.91266 13.9998 4.17516 14.7457 4.17516 15.6665C4.17516 16.5873 4.91266 17.3332 5.8335 17.3332C6.75433 17.3332 7.50016 16.5873 7.50016 15.6665C7.50016 14.7457 6.75433 13.9998 5.8335 13.9998ZM0.833496 0.666504V2.33317H2.50016L5.496 8.654L4.371 10.6957C4.24183 10.9373 4.16683 11.2082 4.16683 11.4998C4.16683 12.4207 4.91266 13.1665 5.8335 13.1665H15.8335V11.4998H6.18766C6.071 11.4998 5.97933 11.4082 5.97933 11.2915C5.97933 11.254 5.98766 11.2207 6.00433 11.1915L6.75016 9.83317H12.9585C13.5835 9.83317 14.1293 9.48734 14.4168 8.97484L17.396 3.5665C17.4627 3.44984 17.5002 3.31234 17.5002 3.1665C17.5002 2.94549 17.4124 2.73353 17.2561 2.57725C17.0998 2.42097 16.8878 2.33317 16.6668 2.33317H4.346L3.55433 0.666504H0.833496ZM14.1668 13.9998C13.246 13.9998 12.5085 14.7457 12.5085 15.6665C12.5085 16.5873 13.246 17.3332 14.1668 17.3332C15.0877 17.3332 15.8335 16.5873 15.8335 15.6665C15.8335 14.7457 15.0877 13.9998 14.1668 13.9998Z"
+              fill="white"
+              fill-opacity="0.5"
+            />
+          </svg>
+        </div>
+        <div v-else-if="count >= 2" class="reduce" @click="decrease">-</div>
+        <input type="text" name="count" v-model="count" >
+        <div class="add" @click="increase">+</div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+let count = ref(0);
+const quantity = ref(0);
+const idShowButtons = ref(false);
+const idShowCart = ref(true);
+
+const addToCart = () => {
+  count.value += 1;
+  idShowButtons.value = true;
+  idShowCart.value = false;
+};
+
+const deleteItem = () => {
+  count.value = 0;
+  idShowButtons.value = false;
+  idShowCart.value = true;
+};
+
+const decrease = () => {
+  if (count.value > 0) {
+    count.value--;
+  }
+};
+
+const increase = () => {
+  count.value++;
+};
+</script>
 
 <style lang="scss" scoped>
 .card {
@@ -68,8 +124,8 @@
       rgba(29, 17, 47, 1) 100%
     );
 
-    .card-image{
-        transform: scale(1.05);
+    .card-image {
+      transform: scale(1.05);
     }
   }
 
@@ -151,17 +207,63 @@
     transition: background-color 0.4s ease;
 
     &:hover {
-        svg path {
-          fill-opacity: 1;
-        }
-      background-color: #A759FF;
-
+      svg path {
+        fill-opacity: 1;
+      }
+      background-color: #a759ff;
     }
 
     .icon-cart {
       width: 16px;
       height: 16px;
       display: inline-block;
+    }
+  }
+
+  .card-add-btns {
+    .counter {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      div {
+        background-color: #ffffff10;
+        border-radius: 4px;
+      }
+
+      input {
+        width: 100%;
+        max-width: 76px;
+        height: 36px;
+        padding: 4px 10px;
+        border: transparent;
+        background-color: #ffffff10;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 16px;
+
+        &:focus,
+        &:active{
+          outline: none;
+        }
+      }
+
+      .del-icon,
+      .reduce,
+      .add {
+        padding: 4px 10px;
+
+        &:hover {
+          background: #ffffff21;
+          color: #32f26f;
+
+          svg path {
+            fill: #32f26f;
+          }
+        }
+      }
     }
   }
 }

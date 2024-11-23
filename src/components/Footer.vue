@@ -208,9 +208,9 @@ const availableLanguages = computed(() => {
 <style lang="scss" scoped>
 .footer {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 60px 20px;
   padding-bottom: 40px;
 
   display: flex;

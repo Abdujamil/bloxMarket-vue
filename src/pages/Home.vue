@@ -18,11 +18,12 @@
           <swiper-slide>
             <img src="/slide-bg1.png" alt="background" />
             <div class="swiper__slide-head">
+              <p>Активируй его и забирай свой бонус!</p>
               <h1>
                 Нашёл промокод <br />
                 в соцсетях?
               </h1>
-              <p>Активируй его и забирай свой бонус!</p>
+              
             </div>
             <a class="swiper__slide-link" href="#">
               <svg
@@ -172,7 +173,7 @@
                 <span>93</span>
               </div>
               <div class="btn">
-                Кейсы
+                Cases
                 <span>
                   <svg
                     width="17"
@@ -212,7 +213,7 @@
                 <span>253</span>
               </div>
               <div class="btn">
-                Магазин
+                SHOP
                 <span>
                   <svg
                     width="17"
@@ -247,11 +248,8 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 </script>
 
 <style lang="scss" scoped>
+
 .content {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 20px;
 
   &__head {
     width: 100%;
@@ -326,7 +324,6 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         width: 100%;
         position: absolute;
         right: 0;
-        bottom: -1px;
         object-fit: contain;
         z-index: -1;
         transition: all 0.4s ease-in-out;
@@ -335,16 +332,16 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 
       h1 {
         max-width: 404px;
-        height: 168px;
+        // height: 168px;
+        font-size: 44px;
         font-weight: 800;
-        font-size: 56px;
-        line-height: 56px;
+        line-height: 44px;
 
         color: #ffffff;
       }
       p {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 24px;
         display: flex;
         align-items: center;
@@ -352,18 +349,18 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         color: rgba(255, 255, 255, 0.8);
 
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-        margin: 20px 0;
       }
 
       .swiper__slide-link {
         width: 100%;
-        max-width: 6rem;
+        max-width: 5rem;
         text-decoration: none;
         background: #ffffffb3;
-        border-radius: 16px;
+        border-radius: 8px;
         padding: 8px;
-        height: 42px;
+        height: 36px;
         position: relative;
+        margin-top: 20px;
 
         display: flex;
         align-items: center;
@@ -418,7 +415,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         width: 100%;
         max-width: 5rem;
         text-decoration: none;
-        background: linear-gradient(325deg, rgba(95, 10, 167, 0.04) 0%, rgb(0 255 83) 100%);
+        background: linear-gradient(325deg, rgba(95, 10, 167, 0.04) 0%, #A759FF 100%);
         border-radius: 8px;
         padding: 4px;
         height: 35px;

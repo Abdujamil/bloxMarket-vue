@@ -2,13 +2,16 @@
   <div class="navbar">
     <div class="navbar__menu">
       <RouterLink to="/coin" class="navbar__manu-link">
-        <img src="/menu1-icon.png" alt="icon" />
+        <img title="Coinflip" src="/menu1-icon.png" alt="icon" />
+        <!-- <span>Coinflip</span> -->
       </RouterLink>
       <RouterLink to="/case" class="navbar__manu-link">
-        <img src="/menu2-icon.png" alt="icon" />
+        <img title="Cases" src="/menu2-icon.png" alt="icon" />
+        <!-- <span>Cases</span> -->
       </RouterLink>
       <RouterLink to="/shop" class="navbar__manu-link">
-        <img src="/menu3-icon.png" alt="icon" />
+        <img title="SHOP" src="/menu3-icon.png" alt="icon" />
+        <!-- <span>Shop</span> -->
       </RouterLink>
     </div>
   </div>
@@ -16,10 +19,13 @@
 
 <style lang="scss" scoped>
 .navbar {
+  width: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+
+  background-color: #000;
 
   &__menu {
     display: flex;
@@ -38,13 +44,32 @@
     height: 45px;
     transition: all 0.3s ease-in-out;
     opacity: 0.5;
+    position: relative;
+    text-decoration: none;
+
+    span{
+      position: absolute;
+      left: 130%;
+      opacity: 0;
+
+      background: #000;
+      padding: 8px;
+      border-radius: 8px;
+    }
 
     &:hover, 
     &.router-link-active{
       transform: scale(1.1);
       opacity: 1;
       filter: drop-shadow(0px 0px 20px #a759ff);
+
+      span{
+        transform: scale(1);
+        opacity: 1;
+        filter: none;
+      }
     }
   }
+
 }
 </style>
