@@ -7,6 +7,7 @@ const routes = [
   { path: "/coin", component: () => import("../pages/CoinFlip.vue") },
   { path: "/case", component: () => import("../pages/Cases.vue") },
   { path: "/shop", component: () => import("../pages/Shop.vue") },
+  { path: "/profile", component: () => import("../pages/Profile.vue") },
 ];
 
 // Создание экземпляра роутера

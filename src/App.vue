@@ -30,7 +30,7 @@ import Header from "./components/Header.vue";
 
     .content {
       width: 100%;
-      max-width: 1400px;
+      max-width: 1300px;
       min-height: 740px;
       margin: 0 auto;
       padding: 0 20px;
