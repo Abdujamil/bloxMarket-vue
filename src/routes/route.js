@@ -8,6 +8,7 @@ const routes = [
   { path: "/case", component: () => import("../pages/Cases.vue") },
   { path: "/shop", component: () => import("../pages/Shop.vue") },
   { path: "/profile", component: () => import("../pages/Profile.vue") },
+  { path: "/notification", component: () => import("../pages/Notification.vue") },
 ];
 
 // Создание экземпляра роутера
